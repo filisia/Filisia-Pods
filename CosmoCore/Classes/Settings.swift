@@ -18,6 +18,7 @@ public protocol InteractionSettings: Codable {
 }
 
 public protocol SettingsPersistentStore {
+    // MARK: - Properties
     init(interactionName: String, userDefaults: UserDefaults)
     func settings<SettingsType: Decodable>() throws -> SettingsType
     func store<SettingsType: Encodable>(_ settings: SettingsType) throws
