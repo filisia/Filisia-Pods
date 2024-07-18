@@ -21,6 +21,7 @@ public protocol ScoresPersistentStore {
     func store<ScoresType: Encodable>(_ scores: ScoresType) throws
 }
 
+// MARK: - InteractionScoresPersistentStore
 public class InteractionScoresPersistentStore: ScoresPersistentStore {
     public enum PersistentStoreError: Error {
         case unableToDecodeData
