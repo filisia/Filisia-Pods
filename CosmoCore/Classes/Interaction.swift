@@ -43,6 +43,7 @@ public extension InteractionBase {
 }
 
 public extension InteractionBaseScores {
+    // this is the scores for the interaction
     var scores: Scores {
         set {
             let store = InteractionScoresPersistentStore(interactionName: Scores.identifier)
