@@ -25,6 +25,7 @@ public protocol SettingsPersistentStore {
 }
 
 public class InteractionSettingsPersistentStore: SettingsPersistentStore {
+    // MARK: - Properties
     public enum PersistentStoreError: Error {
         case unableToDecodeData
     }
