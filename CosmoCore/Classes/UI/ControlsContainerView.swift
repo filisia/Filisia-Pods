@@ -8,7 +8,7 @@
 import UIKit
 
 final public class ControlsContainerView: UIView {
-    public init(leftSideViews:[UIView], rightSideViews: [UIView]) {
+    public init(leftSideViews: [UIView], rightSideViews: [UIView]) {
         super.init(frame: .zero)
         let leftContainer = sideContainer(contentViews: leftSideViews)
         let rightConainer = sideContainer(contentViews: rightSideViews)

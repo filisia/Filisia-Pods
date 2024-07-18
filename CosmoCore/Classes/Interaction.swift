@@ -31,8 +31,7 @@ public extension InteractionBase {
             let store = InteractionSettingsPersistentStore(interactionName: Settings.identifier)
             do {
                 return try store.settings() as Settings
-            }
-            catch {
+            } catch {
                 // if retrieaval of the values from the store fails, we initialise with the default initial values
                 // try to store them and return.
                 let settings = Settings.init()
@@ -53,8 +52,7 @@ public extension InteractionBaseScores {
             let store = InteractionScoresPersistentStore(interactionName: Scores.identifier)
             do {
                 return try store.scores() as Scores
-            }
-            catch {
+            } catch {
                 // if retrieaval of the values from the store fails, we initialise with the default initial values
                 // try to store them and return.
                 let scores = Scores.init()
@@ -77,11 +75,8 @@ public extension Interaction where Self: InteractionBase {
     }
 }
 
-
 public protocol InteractionMain: UIViewController {
     associatedtype Settings: InteractionSettings
     init(settings: Settings)
 //    func reinit()
 }
-
-

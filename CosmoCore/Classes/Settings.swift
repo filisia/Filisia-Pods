@@ -12,8 +12,8 @@ public protocol InteractionSettings: Codable {
     var localisedName: String { get }
     var localisedDescription: String { get }
     var imageName: String { get }
-    var metadata: InteractionMetadata { get }    
-    
+    var metadata: InteractionMetadata { get }
+
     init()
 }
 
@@ -22,7 +22,6 @@ public protocol SettingsPersistentStore {
     func settings<SettingsType: Decodable>() throws -> SettingsType
     func store<SettingsType: Encodable>(_ settings: SettingsType) throws
 }
-
 
 public class InteractionSettingsPersistentStore: SettingsPersistentStore {
     public enum PersistentStoreError: Error {
@@ -48,4 +47,3 @@ public class InteractionSettingsPersistentStore: SettingsPersistentStore {
         return try JSONDecoder().decode(SettingsType.self, from: data)
     }
 }
-

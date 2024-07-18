@@ -10,7 +10,7 @@ import Foundation
 public protocol InteractionScores: Codable {
     static var identifier: String { get }
     var levelTopScore: [Int: Int] { get }
-    
+
     init()
 }
 
@@ -19,7 +19,6 @@ public protocol ScoresPersistentStore {
     func scores<ScoresType: Decodable>() throws -> ScoresType
     func store<ScoresType: Encodable>(_ scores: ScoresType) throws
 }
-
 
 public class InteractionScoresPersistentStore: ScoresPersistentStore {
     public enum PersistentStoreError: Error {
@@ -45,4 +44,3 @@ public class InteractionScoresPersistentStore: ScoresPersistentStore {
         return try JSONDecoder().decode(ScoresType.self, from: data)
     }
 }
-
