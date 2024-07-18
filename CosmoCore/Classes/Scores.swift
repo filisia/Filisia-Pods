@@ -14,6 +14,7 @@ public protocol InteractionScores: Codable {
     init()
 }
 
+// MARK: - ScoresPersistentStore
 public protocol ScoresPersistentStore {
     init(interactionName: String, userDefaults: UserDefaults)
     func scores<ScoresType: Decodable>() throws -> ScoresType
